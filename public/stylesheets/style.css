@@ -1,3 +1,17 @@
 body {
   font-family: 'Helvetica';
 }
+
+#artist_list {
+  max-width: 15vw;
+  border: 1px solid gray;
+  max-height: 95vh;
+  overflow-y: scroll;
+  display: inline-block;
+  float:left;
+}
+
+#art_list {
+  display: inline-block;
+  float: left;
+}
