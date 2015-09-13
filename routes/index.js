@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var pg = require('pg');
-var connectionString = '/db' || 'postgres://localhost:5432/art_log';
+var connectionString = DATABASE_URL || 'postgres://localhost:5432/art_log';
 
 //the root path, the /artists path
 router.get('/', function(req, res, next) {
