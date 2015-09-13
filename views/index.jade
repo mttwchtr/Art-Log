@@ -2,15 +2,17 @@ extends layout
 
 block content
   #artist_list
-    h1= title
-    form
-      input(type='text' id='artist_name')
-      input(type='text' id='artist_years')
+    form#new_artist_form
+      input(type='text' id='artist_name' placeholder='Name')
+      input(type='text' id='artist_years' placeholder='Years')
       button
     each artist in artists
-      p(id=artist.id, class='artist_name')=artist.name
-      img(src= artist.url, width='100px')
-      p= artist.years
+      .artist(id='artist_' + artist.id)
+        p.artist_name= artist.name
+        img(src= artist.url, width='100px')
+        p.artist_years= artist.years
+        .remove_artist X
+        .edit_artist Edit
   #art_list
 
 
