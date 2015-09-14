@@ -9,15 +9,23 @@ body * {
   text-align: center;
 }
 
-#view_type {
+#artist_view_type, #clear, #work_view_type, #random {
   font-size: 0.8em;
 }
 
 .chosen {
-  border-bottom: 1px solid #ccc;
+  font-weight: 700;
 }
 
-#view_type:hover, .artist_name:hover {
+#artist_view_type:hover, 
+.artist_name:hover,
+#clear:hover, 
+#work_view_type:hover, 
+.edit_artist:hover, 
+.remove_artist:hover,
+.edit_work:hover,
+.remove_work:hover,
+#random:hover {
   cursor: pointer;
 }
 
@@ -49,6 +57,7 @@ form button {
   display: inline-block;
   float: left;
   margin-left: 12vw;
+  margin-top: 10px;
 }
 
 img {
@@ -56,7 +65,7 @@ img {
 }
 
 .artist {
-  margin-bottom: 15px;
+  padding-bottom: 15px;
 }
 
 .edit_artist, .remove_artist, .remove_work, .edit_work {
@@ -65,6 +74,21 @@ img {
 
 .edit_artist, .edit_work {
   padding-right: 7px;
+}
+
+#art_list .works_header a, #art_list .works_header form {
+  display: inline;
+  float: left;
+}
+
+#art_list .works_header a {
+  padding-right: 15px;
+  font-weight: 700;
+}
+
+#art_list a {
+  text-decoration: none;
+  color: black;
 }
 
 form input {
@@ -81,5 +105,5 @@ form input {
 .edit_work_form input {
   display: block;
   width: 100%;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
 }

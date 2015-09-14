@@ -1,9 +1,20 @@
-- formatting
-- click to see big pictures
-- clear art_list
+  - formatting
+  - put the form at the top of the art list
+  - clear art_list
+  - click to see big pictures
+  - clear forms on submission
+  - persist art collapse / expand state
+  - have some visual way of knowing which artist was chosen
+  - keep new artists and works expanded or collapsed
+  - ensure all hover states enabled
+  - new artist with no pics look the same as no pic artists already entered
+  - navigate to chosen artist feature
+  - click to get ten random pictures
+- when a new work is added, put that pic in the sidebar if the artist does not have one already
+- Use consist artist_ or work_ classes
+- refactor deletes to not return data
+- affix the sidebar header to the top
+
 - get errors from database
-- when a new work is added, put that pic in the sidebar id the artist does not have one already
-- clear forms on submission
-- change heroku url
-- new artist with no pics look the same as no pic artists already entered
-- have some visual way of knowing which artist was chosen
+- refactor CSS to SASS
+- look into partials

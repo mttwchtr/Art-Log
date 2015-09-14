@@ -21,6 +21,25 @@ router.get('/', function(req, res, next) {
     });
 });
 
+//the random works path
+router.get('/works/random', function(req, res, next) {
+    var results = [];
+    pg.connect(connectionString, function(err, client, done) {
+        var query = client.query("select work.title, work.url, artist.name, artist.id from work join artist on artist.id = work.artist_id");
+        query.on('row', function(row) {
+            results.push(row);
+        });
+        query.on('end', function() {
+            client.end();
+            return res.json(results);
+        });
+        if(err) {
+          console.log(err);
+        }
+    });
+});
+
+
 // create a new artist
 router.post('/artists/new', function(req, res) {
     var results = [];

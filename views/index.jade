@@ -3,7 +3,10 @@ extends layout
 block content
   #artist_list
     h2 Artists
-    p#view_type Expand / Collapse
+    p#clear Clear
+    p#artist_view_type Artists -
+    p#work_view_type Works -
+    p#random Random Ten
     form#new_artist_form
       input(type='text' id='artist_name' placeholder='Name')
       input(type='text' id='artist_years' placeholder='Years')
