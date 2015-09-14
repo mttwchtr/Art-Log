@@ -78,7 +78,7 @@ $(document).ready(function(){
       },
       dataType: 'json',
       success: function(data) {
-        $('<div class="work" id="work_' + data[0].id +'"><img src =' + data[0].url + ' width="200px"</img><p class="title">' + data[0].title + '</p><p class="year">' + data[0].year + '</p><p class="remove_work">X</p><p class="edit_work">Edit</p></div>').insertBefore('#new_work_form');
+        $('<div class="work" id="work_' + data[0].id +'"><img src =' + data[0].url + ' height="200px"</img><p class="title">' + data[0].title + '</p><p class="year">' + data[0].year + '</p><p class="remove_work">X</p><p class="edit_work">Edit</p></div>').insertBefore('#new_work_form');
       }
     });
   });
@@ -160,13 +160,15 @@ $(document).ready(function(){
     dataType: 'json',
     success: function(data) {
       $('#' + work_id).empty();
-      $('#' + work_id).append('<img src =' + data[0].url + ' width="200px"</img><p class="title">' + data[0].title + '</p><p class="year">' + data[0].year + '</p><p class="remove_work">X</p><p class="edit_work">Edit</p>');
+      $('#' + work_id).append('<img src =' + data[0].url + ' height="200px"</img><p class="title">' + data[0].title + '</p><p class="year">' + data[0].year + '</p><p class="remove_work">X</p><p class="edit_work">Edit</p>');
     }
   });
  });
 
  // display an artist's works
  $('body').on('click', '.artist .artist_name', function(event){
+    $('.artist_name').removeClass('chosen');
+    $(this).addClass('chosen');
     var id = $(this).parent().attr('id').split('_')[1];
     var artistAPI = "/artist/" + id;
     var callOptions = {
@@ -175,7 +177,7 @@ $(document).ready(function(){
     function displayWorks(data) {
       var art_list = '';
       data.forEach(function(work){
-        art_list += '<div class="work" id= work_' + work.id + '><img src =' + work.url + ' width="200px"</img><p class="title">' + work.title + '</p><p class="year">' + work.year + '</p><p class="remove_work">X</p><p class="edit_work">Edit</p></div>';
+        art_list += '<div class="work" id= work_' + work.id + '><p class="title">' + work.title + '</p><p class="year">' + work.year + '</p><img src =' + work.url + ' height="200px"</img><br><span class="edit_work">Edit</span><span class="remove_work">Delete</span></div>';
       });
       art_list += "<form id='new_work_form'><input type ='text' placeholder='year' id='work_year'><input type ='text' placeholder='title' id='work_title'><input type ='text' placeholder='url' id='work_url'><input type ='hidden'  id='work_artist_id' value=" + id + "><button></form>"
       $('#art_list').html(art_list);

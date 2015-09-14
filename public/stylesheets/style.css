@@ -1,10 +1,28 @@
 body {
-  font-family: 'Helvetica';
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+}
+
+body * {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#view_type {
+  font-size: 0.8em;
+}
+
+.chosen {
+  border-bottom: 1px solid #ccc;
+}
+
+#view_type:hover, .artist_name:hover {
+  cursor: pointer;
 }
 
 #artist_list {
-  max-width: 15vw;
-  border: 1px solid gray;
+  max-width: 12vw;
   max-height: 95vh;
   overflow-y: scroll;
   display: inline-block;
@@ -14,8 +32,54 @@ body {
   left: 0;
 }
 
+h2 {
+  font-weight: 400;
+  margin-top: 15px;
+}
+
+#new_artist_form {
+  margin-bottom: 15px;
+}
+
+form button {
+  display: none;
+}
+
 #art_list {
   display: inline-block;
   float: left;
-  margin-left: 15vw;
+  margin-left: 12vw;
+}
+
+img {
+  padding-top: 5px;
+}
+
+.artist {
+  margin-bottom: 15px;
+}
+
+.edit_artist, .remove_artist, .remove_work, .edit_work {
+  font-size: 0.8em;
+}
+
+.edit_artist, .edit_work {
+  padding-right: 7px;
+}
+
+form input {
+  border: 1px solid #ccc;
+  color: black;
+}
+
+.work {
+  padding: 10px;
+  display: inline-block;
+  float:left;
+}
+
+.edit_work_form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 3px;
 }

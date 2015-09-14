@@ -1,0 +1,9 @@
+- formatting
+- click to see big pictures
+- clear art_list
+- get errors from database
+- when a new work is added, put that pic in the sidebar id the artist does not have one already
+- clear forms on submission
+- change heroku url
+- new artist with no pics look the same as no pic artists already entered
+- have some visual way of knowing which artist was chosen
