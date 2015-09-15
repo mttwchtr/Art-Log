@@ -10,11 +10,13 @@
   - new artist with no pics look the same as no pic artists already entered
   - navigate to chosen artist feature
   - click to get ten random pictures
+  - Use consist artist_ and work_ classes
 - when a new work is added, put that pic in the sidebar if the artist does not have one already
-- Use consist artist_ or work_ classes
 - refactor deletes to not return data
 - affix the sidebar header to the top
-
+- if you delete a work shown in the artist's sidebar, remove it
 - get errors from database
 - refactor CSS to SASS
 - look into partials
+- extract 
+- use gulp to compile sass

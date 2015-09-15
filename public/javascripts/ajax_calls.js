@@ -11,7 +11,7 @@ $(document).ready(function(){
       },
       dataType: 'json',
       success: function(data) {
-        $('#art_list').empty();
+        $('#work_list').empty();
         $('p').removeClass('chosen');
         var id_length = data.length;
         var limit = Math.min(10, id_length);
@@ -27,9 +27,9 @@ $(document).ready(function(){
           var ele = data[index];
           rand_work_html += '<div class="work"><p>' + ele.title + '</p><a href="#artist_' + ele.id + '">' + ele.name + '</a><br><img src =' + ele.url + ' height="200px"</img></div>';
         });
-        $('#art_list').append(rand_work_html);
+        $('#work_list').append(rand_work_html);
         if($('#work_view_type').text() === 'Works +'){
-          $('#art_list img').siblings().hide();
+          $('#work_list img').siblings().hide();
         }
       }
     });
@@ -50,7 +50,7 @@ $(document).ready(function(){
       },
       dataType: 'json',
       success: function(data) {
-        $('#artist_list').append('<div class="artist" id=artist_'+ data[0].id +'><p class="artist_name">' + data[0].name + '</p><p class="artist_years">' + data[0].years + '</p><img width="100px"><span class="edit_artist">Edit</span><span class="remove_artist">Delete</span></div>');
+        $('#artist_list').append('<div class="artist" id=artist_'+ data[0].id +'><p class="artist_name">' + data[0].name + '</p><p class="artist_years">' + data[0].work_years + '</p><img width="100px"><span class="edit_artist">Edit</span><span class="remove_artist">Delete</span></div>');
         $('#new_artist_form').trigger("reset");
         if($('#artist_view_type').text() === 'Artists +'){
           $('#artist_' + data[0].id + ' .artist_name').siblings().hide();
@@ -117,7 +117,8 @@ $(document).ready(function(){
       },
       dataType: 'json',
       success: function(data) {
-        $('#art_list').append('<div class="work" id= work_' + data[0].id + '><p class="title">' + data[0].title + '</p><p class="year">' + data[0].year + '</p><img src =' + data[0].url + ' height="200px"</img><br><span class="edit_work">Edit</span><span class="remove_work">Delete</span></div>');
+        console.log(data);
+        $('#work_list').append('<div class="work" id= work_' + data[0].id + '><p class="work_title">' + data[0].title + '</p><p class="work_year">' + data[0].year + '</p><img src =' + data[0].url + ' height="200px"</img><br><span class="edit_work">Edit</span><span class="remove_work">Delete</span></div>');
         $('#new_work_form').trigger("reset");
         if($('#work_view_type').text() === 'Works +'){
           $('#work_' + data[0].id + ' img').siblings().hide();
@@ -144,8 +145,8 @@ $(document).ready(function(){
   event.preventDefault();
   var id = $(this).parent().attr('id').split('_')[1];
   var url = $(this).siblings('img').attr('src');
-  var title = $(this).siblings('.title').text();
-  var year = $(this).siblings('.year').text();
+  var title = $(this).siblings('.work_title').text();
+  var year = $(this).siblings('.work_year').text();
   $(this).toggleClass('editing');
   $('.edit_work_form').remove();
   if($(this).hasClass('editing')){
@@ -203,7 +204,7 @@ $(document).ready(function(){
     dataType: 'json',
     success: function(data) {
       $('#' + work_id).empty();
-      $('#' + work_id).append('<img src =' + data[0].url + ' height="200px"</img><p class="title">' + data[0].title + '</p><p class="year">' + data[0].year + '</p><p class="remove_work">X</p><p class="edit_work">Edit</p>');
+      $('#' + work_id).append('<p class="work_title">' + data[0].title + '</p><p class="work_year">' + data[0].year + '</p><img src =' + data[0].url + ' height="200px"</img><br><span class="edit_work">Edit</span><span class="remove_work">Remove</span>');
     }
   });
  });
@@ -223,11 +224,11 @@ $(document).ready(function(){
       var art_list = '<div class="works_header"><a href= #artist_'+ id +'>' +  artist_name + ' | ' + artist_years + '</a>';
       art_list += "<form id='new_work_form'><input type ='text' placeholder='year' id='work_year'><input type ='text' placeholder='title' id='work_title'><input type ='text' placeholder='url' id='work_url'><input type ='hidden' id='work_artist_id' value=" + id + "><button></button></form></div><br>";
       data.forEach(function(work){
-        art_list += '<div class="work" id= work_' + work.id + '><p class="title">' + work.title + '</p><p class="year">' + work.year + '</p><img src =' + work.url + ' height="200px"</img><br><span class="edit_work">Edit</span><span class="remove_work">Delete</span></div>';
+        art_list += '<div class="work" id= work_' + work.id + '><p class="work_title">' + work.title + '</p><p class="work_year">' + work.year + '</p><img src =' + work.url + ' height="200px"</img><br><span class="edit_work">Edit</span><span class="remove_work">Delete</span></div>';
       });
-      $('#art_list').html(art_list);
+      $('#work_list').html(art_list);
       if($('#work_view_type').text() === 'Works +'){
-        $('#art_list img').siblings().toggle();
+        $('#work_list img').siblings().toggle();
       }
     }
     $.getJSON(artistAPI, callOptions, displayWorks);

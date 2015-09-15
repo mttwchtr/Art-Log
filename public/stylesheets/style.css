@@ -41,7 +41,7 @@ body * {
 }
 
 h2 {
-  font-weight: 400;
+  font-weight: 800;
   margin-top: 15px;
 }
 
@@ -53,7 +53,7 @@ form button {
   display: none;
 }
 
-#art_list {
+#work_list {
   display: inline-block;
   float: left;
   margin-left: 12vw;
@@ -76,17 +76,17 @@ img {
   padding-right: 7px;
 }
 
-#art_list .works_header a, #art_list .works_header form {
+#work_list .works_header a, #work_list .works_header form {
   display: inline;
   float: left;
 }
 
-#art_list .works_header a {
+#work_list .works_header a {
   padding-right: 15px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
-#art_list a {
+#work_list a {
   text-decoration: none;
   color: black;
 }

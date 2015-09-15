@@ -12,7 +12,7 @@ $(document).ready(function(){
 
   $('body').on('click', '#clear', function(event){
     event.preventDefault();
-    $('#art_list').empty();
+    $('#work_list').empty();
     $('p').removeClass('chosen');
   });
 
@@ -23,6 +23,6 @@ $(document).ready(function(){
       $(this).text('Works -')
     }
     event.preventDefault();
-    $('#art_list img').siblings().toggle();
+    $('#work_list img').siblings().toggle();
   });
 });
