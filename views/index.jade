@@ -2,23 +2,25 @@ extends layout
 
 block content
   #artist_list
-    h2 Art
-    p#clear Clear
-    p#artist_view_type Artists -
-    p#work_view_type Works -
-    p#random Random Ten
-    form#new_artist_form
-      input(type='text' id='artist_name' placeholder='Name')
-      input(type='text' id='artist_years' placeholder='Years')
-      button
-    each artist in artists
-      .artist(id='artist_' + artist.id)
-        p.artist_name= artist.name
-        p.artist_years= artist.years
-        img(src= artist.url, width='100px')
-        br
-        span.edit_artist Edit
-        span.remove_artist Delete
+    #artist_header
+      h2 Art
+      p#clear Clear
+      p#artist_view_type Artists -
+      p#work_view_type Works -
+      p#random Random Ten
+      form#new_artist_form
+        input(type='text' id='artist_name' placeholder='Name')
+        input(type='text' id='artist_years' placeholder='Years')
+        button
+    #artist_body    
+      each artist in artists
+        .artist(id='artist_' + artist.id)
+          p.artist_name= artist.name
+          p.artist_years= artist.years
+          img(src= artist.url, width='100px')
+          br
+          span.edit_artist Edit
+          span.remove_artist Delete
   #work_list
 
 

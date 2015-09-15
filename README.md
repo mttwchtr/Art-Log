@@ -11,12 +11,14 @@
   - navigate to chosen artist feature
   - click to get ten random pictures
   - Use consist artist_ and work_ classes
-- when a new work is added, put that pic in the sidebar if the artist does not have one already
+  - when a new work is added, put that pic in the sidebar if the artist does not have one already
+  - if an artist's work is shown when the artist is deleted, clear work_list
 - refactor deletes to not return data
 - affix the sidebar header to the top
-- if you delete a work shown in the artist's sidebar, remove it
-- get errors from database
-- refactor CSS to SASS
+- if you delete a work shown in the artist's sidebar, remove it (replace or empty)
+- get errors from database, display on screen
 - look into partials
-- extract 
-- use gulp to compile sass
+- extract pg calls into one function
+- convert css to sass
+- fix works_header CSS
+- make artist_header/body, work_header/body

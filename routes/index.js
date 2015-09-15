@@ -181,7 +181,7 @@ router.get('/artist/:id', function(req, res, next) {
         });
         query.on('end', function() {
             client.end();
-            return res.json(results);
+            res.render('work', {layout: false, data: results});
         });
         if(err) {
           console.log(err);
