@@ -31,13 +31,23 @@ body * {
 
 #artist_list {
   max-width: 12vw;
-  max-height: 95vh;
-  overflow-y: scroll;
+  height: 100vh;
   display: inline-block;
   float:left;
   position: fixed;
   top: 0;
   left: 0;
+}
+
+#artist_header {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+#artist_body {
+  height: -webkit-calc(100vh - 170px);
+  overflow-y: scroll; 
 }
 
 h2 {
