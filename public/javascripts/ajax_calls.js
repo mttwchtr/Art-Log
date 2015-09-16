@@ -69,11 +69,10 @@ $(document).ready(function(){
       $.ajax({
         type: "DELETE",
         url: '/artist?id=' + id,
-        dataType: 'json',
         error:  function() {
           alert('An error occurred');
         },
-        success: function(data) {
+        success: function() {
           $(self).parent().remove();
           if(id == $('#work_list input[type=hidden]').val()){
             $('#work_list').empty();
@@ -93,11 +92,11 @@ $(document).ready(function(){
       $.ajax({
         type: "DELETE",
         url: '/work?id=' + id,
-        dataType: 'json',
+        dataType: 'text',
         error:  function() {
           alert('An error occurred');
         },
-        success: function(data) {
+        success: function() {
           $(self).parent().remove();
         }
       });
@@ -231,7 +230,7 @@ $(document).ready(function(){
         var art_list = '';
         var artist_name = $('#artist_' + id + ' .artist_name').text();
         var artist_years = $('#artist_' + id + ' .artist_years').text();
-        var art_list = '<div class="work_header"><a href= #artist_'+ id +'>' +  artist_name + ' | ' + artist_years + '</a>';
+        var art_list = '<div id="work_header"><a href= #artist_'+ id +'>' +  artist_name + ' | ' + artist_years + '</a>';
         art_list += "<form id='new_work_form'><input type ='text' placeholder='year' id='work_year'><input type ='text' placeholder='title' id='work_title'><input type ='text' placeholder='url' id='work_url'><input type ='hidden' id='work_artist_id' value=" + id + "><button></button></form></div><br>";
         art_list += data;
         $('#work_list').html(art_list);

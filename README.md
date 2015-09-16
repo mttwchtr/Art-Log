@@ -15,7 +15,7 @@
   - affix the sidebar header to the top
   - fix work_header CSS
   - click to see big pictures
-- refactor deletes to not return data
+  - refactor deletes to not return data
 - if you delete a work shown in the artist's sidebar, remove it (replace or empty)
 - get errors from database, display on screen
 - refactor html strings to jade partials

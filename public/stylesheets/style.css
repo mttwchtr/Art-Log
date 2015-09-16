@@ -88,18 +88,18 @@ img {
   padding-right: 7px;
 }
 
-#work_list .work_header {
+#work_list #work_header {
   overflow: auto;
   font-size: 18px;
   margin-top: 15px;
 }
 
-#work_list .work_header a, #work_list .work_header form {
+#work_list #work_header a, #work_list #work_header form {
   display: inline;
   float: left;
 }
 
-#work_list .work_header a {
+#work_list #work_header a {
   padding-right: 25px;
   font-weight: 800;
   padding-left: 25px;

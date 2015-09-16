@@ -31,12 +31,12 @@ $(document).ready(function(){
     var id = $(this).parent().attr('id').split('_')[1];
     if(!$(this).hasClass('big')){
       $(this).addClass('big');
-      $('.work_header').hide();
+      $('#work_header').hide();
       $('#work_list .work:not(#work_' + id + ')').hide();
       $('#work_' + id).children().not('img').hide();
       $(this).css('height', '90vh');
     } else {
-      $('.work_header').show();
+      $('#work_header').show();
       $(this).removeClass('big');
       $('#work_list .work').show();
       $(this).css('height', '200px');
