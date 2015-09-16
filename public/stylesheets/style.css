@@ -25,7 +25,8 @@ body * {
 .remove_artist:hover,
 .edit_work:hover,
 .remove_work:hover,
-#random:hover {
+#random:hover,
+#work_list img:hover {
   cursor: pointer;
 }
 
@@ -51,8 +52,9 @@ body * {
 }
 
 h2 {
-  font-weight: 800;
+  font-weight: 400;
   margin-top: 15px;
+  font-size: 2.5em;
 }
 
 #new_artist_form {
@@ -86,14 +88,21 @@ img {
   padding-right: 7px;
 }
 
-#work_list .works_header a, #work_list .works_header form {
+#work_list .work_header {
+  overflow: auto;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+#work_list .work_header a, #work_list .work_header form {
   display: inline;
   float: left;
 }
 
-#work_list .works_header a {
-  padding-right: 15px;
+#work_list .work_header a {
+  padding-right: 25px;
   font-weight: 800;
+  padding-left: 25px;
 }
 
 #work_list a {
@@ -107,7 +116,7 @@ form input {
 }
 
 .work {
-  padding: 10px;
+  padding: 0 10px 10px 10px;
   display: inline-block;
   float:left;
 }

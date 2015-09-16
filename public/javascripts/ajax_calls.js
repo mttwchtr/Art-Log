@@ -25,7 +25,7 @@ $(document).ready(function(){
         var rand_work_html = "";
         random_indices.forEach(function(index){
           var ele = data[index];
-          rand_work_html += '<div class="work"><p>' + ele.title + '</p><a href="#artist_' + ele.id + '">' + ele.name + '</a><br><img src =' + ele.url + ' height="200px"</img></div>';
+          rand_work_html += '<div class="work" id="work_' + ele.id + '"><p>' + ele.title + '</p><a href="#artist_' + ele.artist_id + '">' + ele.name + '</a><br><img src =' + ele.url + ' height="200px" /></div>';
         });
         $('#work_list').append(rand_work_html);
         if($('#work_view_type').text() === 'Works +'){
@@ -50,7 +50,7 @@ $(document).ready(function(){
       },
       dataType: 'json',
       success: function(data) {
-        $('#artist_list').append('<div class="artist" id=artist_'+ data[0].id +'><p class="artist_name">' + data[0].name + '</p><p class="artist_years">' + data[0].years + '</p><img width="100px"><span class="edit_artist">Edit</span><span class="remove_artist">Delete</span></div>');
+        $('#artist_body').append('<div class="artist" id=artist_'+ data[0].id +'><p class="artist_name">' + data[0].name + '</p><p class="artist_years">' + data[0].years + '</p><img width="100px"><span class="edit_artist">Edit</span><span class="remove_artist">Delete</span></div>');
         $('#new_artist_form').trigger("reset");
         if($('#artist_view_type').text() === 'Artists +'){
           $('#artist_' + data[0].id + ' .artist_name').siblings().hide();
@@ -220,7 +220,6 @@ $(document).ready(function(){
     $('.artist_name').removeClass('chosen');
     $(this).addClass('chosen');
     var id = $(this).parent().attr('id').split('_')[1];
-
     $.ajax({
       type: "GET",
       url: "/artist/" + id,
@@ -232,7 +231,7 @@ $(document).ready(function(){
         var art_list = '';
         var artist_name = $('#artist_' + id + ' .artist_name').text();
         var artist_years = $('#artist_' + id + ' .artist_years').text();
-        var art_list = '<div class="works_header"><a href= #artist_'+ id +'>' +  artist_name + ' | ' + artist_years + '</a>';
+        var art_list = '<div class="work_header"><a href= #artist_'+ id +'>' +  artist_name + ' | ' + artist_years + '</a>';
         art_list += "<form id='new_work_form'><input type ='text' placeholder='year' id='work_year'><input type ='text' placeholder='title' id='work_title'><input type ='text' placeholder='url' id='work_url'><input type ='hidden' id='work_artist_id' value=" + id + "><button></button></form></div><br>";
         art_list += data;
         $('#work_list').html(art_list);

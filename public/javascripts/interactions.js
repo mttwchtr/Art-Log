@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+  
   $('body').on('click', '#artist_view_type', function(event){
     if($(this).text() === 'Artists +'){
       $(this).text('Artists -')
@@ -24,5 +24,25 @@ $(document).ready(function(){
     }
     event.preventDefault();
     $('#work_list img').siblings().toggle();
+  });
+
+  $('body').on('click', '#work_list img', function(event){
+    event.preventDefault();
+    var id = $(this).parent().attr('id').split('_')[1];
+    if(!$(this).hasClass('big')){
+      $(this).addClass('big');
+      $('.work_header').hide();
+      $('#work_list .work:not(#work_' + id + ')').hide();
+      $('#work_' + id).children().not('img').hide();
+      $(this).css('height', '90vh');
+    } else {
+      $('.work_header').show();
+      $(this).removeClass('big');
+      $('#work_list .work').show();
+      $(this).css('height', '200px');
+      if($('#work_view_type').text() === 'Works -'){
+        $('#work_' + id).children().show();
+      }
+    }
   });
 });

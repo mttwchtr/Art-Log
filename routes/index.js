@@ -25,7 +25,7 @@ router.get('/', function(req, res, next) {
 router.get('/works/random', function(req, res, next) {
     var results = [];
     pg.connect(connectionString, function(err, client, done) {
-        var query = client.query("select work.title, work.url, artist.name, artist.id from work join artist on artist.id = work.artist_id");
+        var query = client.query("select work.title, work.url, artist.name, work.artist_id, work.id from work join artist on artist.id = work.artist_id");
         query.on('row', function(row) {
             results.push(row);
         });
@@ -38,7 +38,6 @@ router.get('/works/random', function(req, res, next) {
         }
     });
 });
-
 
 // create a new artist
 router.post('/artists/new', function(req, res) {

@@ -1,7 +1,6 @@
   - formatting
   - put the form at the top of the art list
   - clear art_list
-  - click to see big pictures
   - clear forms on submission
   - persist art collapse / expand state
   - have some visual way of knowing which artist was chosen
@@ -13,12 +12,14 @@
   - Use consist artist_ and work_ classes
   - when a new work is added, put that pic in the sidebar if the artist does not have one already
   - if an artist's work is shown when the artist is deleted, clear work_list
+  - affix the sidebar header to the top
+  - fix work_header CSS
+  - click to see big pictures
 - refactor deletes to not return data
-- affix the sidebar header to the top
 - if you delete a work shown in the artist's sidebar, remove it (replace or empty)
 - get errors from database, display on screen
-- look into partials
+- refactor html strings to jade partials
 - extract pg calls into one function
 - convert css to sass
-- fix works_header CSS
 - make artist_header/body, work_header/body
+- test with mocha
