@@ -167,7 +167,7 @@ $(document).ready(function(){
   $(this).toggleClass('editing');
   $('#edit_work_form').remove();
   if($(this).hasClass('editing')){
-    $('.work#work_' + id).append('<form id="edit_work_form"><input type="hidden" value=' + id + '><input type="text" placeholder="year" value=' + year + '><input type="text" placeholder="title" value="' + title + '"><input type="url" placeholder="url" value=' + url + '><button></form>');    
+    $('.work#work_' + id).append('<form id="edit_work_form"><input type="hidden" value=' + id + '><input type="text" placeholder="year" value="' + year + '"><input type="text" placeholder="title" value="' + title + '"><input type="url" placeholder="url" value=' + url + '><button></form>');    
   }
  });
 
