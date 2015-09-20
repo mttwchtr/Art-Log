@@ -1,26 +1,6 @@
-  - formatting
-  - put the form at the top of the art list
-  - clear art_list
-  - clear forms on submission
-  - persist art collapse / expand state
-  - have some visual way of knowing which artist was chosen
-  - keep new artists and works expanded or collapsed
-  - ensure all hover states enabled
-  - new artist with no pics look the same as no pic artists already entered
-  - navigate to chosen artist feature
-  - click to get ten random pictures
-  - Use consist artist_ and work_ classes
-  - when a new work is added, put that pic in the sidebar if the artist does not have one already
-  - if an artist's work is shown when the artist is deleted, clear work_list
-  - affix the sidebar header to the top
-  - fix work_header CSS
-  - click to see big pictures
-  - refactor deletes to not return data
-  - get errors from database, display on screen
-- if you delete a work shown in the artist's sidebar, remove it (replace or empty)
+- make artist_header/body, work_header/body w/ header fixed
 - refactor html strings to jade partials
-- extract pg calls into one function
 - convert css to sass
-- make artist_header/body, work_header/body
+- abstract pg connections to a single function
 - test with mocha
 - refactor to MVC pattern

@@ -88,6 +88,7 @@ $(document).ready(function(){
     var result = confirm("Delete?");
     if (result) {
       var id = $(this).parent().attr('id').split('_')[1];
+      var src = $('#work_' + id + ' img').attr('src');
       event.preventDefault();
       var self = this;
       $.ajax({
@@ -99,6 +100,15 @@ $(document).ready(function(){
         },
         success: function() {
           $(self).parent().remove();
+          var artist_id = $('#work_list input[type=hidden]').val();
+          var artist_image_src = $('#artist_' + artist_id + ' img').attr('src');
+          if($('.work').length === 0){
+            $('#artist_' + artist_id + ' img').remove();
+            $('<img width="100px">').insertAfter('#artist_' + artist_id + ' .artist_years');
+          } else if(src === artist_image_src) {
+            var new_src = $('.work img').first().attr('src');
+            $('#artist_' + artist_id + ' img').attr('src', new_src);
+          }
         }
       });
     }

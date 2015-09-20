@@ -1,6 +1,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
+  color: #333;
 }
 
 body * {
@@ -13,6 +14,10 @@ body * {
   font-size: 0.8em;
 }
 
+#artist_list form input {
+  max-width: 100%;
+}
+
 .displayed {
   color: red;
   font-size: 0.8em;
@@ -22,7 +27,6 @@ body * {
   float: left;
   margin-top: 5px;  
 }
-
 
 .chosen {
   font-weight: 700;
@@ -85,7 +89,7 @@ form button {
   float: left;
   margin-left: 12vw;
   margin-top: 10px;
-  width: 100%;
+  width: 80%;
 }
 
 img {
@@ -127,12 +131,12 @@ img {
 
 #work_list a {
   text-decoration: none;
-  color: black;
+  color: #333;
 }
 
 form input {
   border: 1px solid #ccc;
-  color: black;
+  color: #333;
 }
 
 .work {
