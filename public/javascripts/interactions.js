@@ -1,5 +1,6 @@
 $(document).ready(function(){
   
+  // toggle artists' expanded / collapsed views
   $('body').on('click', '#artist_view_type', function(event){
     if($(this).text() === 'Artists +'){
       $(this).text('Artists -')
@@ -10,12 +11,7 @@ $(document).ready(function(){
     $('.artist_name').siblings().toggle();
   });
 
-  $('body').on('click', '#clear', function(event){
-    event.preventDefault();
-    $('#work_list').empty();
-    $('p').removeClass('chosen');
-  });
-
+  // toggle works' expanded / collapsed views
   $('body').on('click', '#work_view_type', function(event){
     if($(this).text() === 'Works -'){
       $(this).text('Works +')
@@ -26,6 +22,14 @@ $(document).ready(function(){
     $('#work_list img').siblings().toggle();
   });
 
+  // clear the work_list
+  $('body').on('click', '#clear', function(event){
+    event.preventDefault();
+    $('#work_list').empty();
+    $('p').removeClass('chosen');
+  });
+
+  // expand the images
   $('body').on('click', '#work_list img', function(event){
     event.preventDefault();
     var id = $(this).parent().attr('id').split('_')[1];

@@ -13,6 +13,17 @@ body * {
   font-size: 0.8em;
 }
 
+.displayed {
+  color: red;
+  font-size: 0.8em;
+}
+
+#work_header .displayed {
+  float: left;
+  margin-top: 5px;  
+}
+
+
 .chosen {
   font-weight: 700;
 }
@@ -28,6 +39,10 @@ body * {
 #random:hover,
 #work_list img:hover {
   cursor: pointer;
+}
+
+.artist_years, .work_year {
+  font-weight: 300;
 }
 
 #artist_list {
@@ -70,6 +85,7 @@ form button {
   float: left;
   margin-left: 12vw;
   margin-top: 10px;
+  width: 100%;
 }
 
 img {
@@ -90,7 +106,6 @@ img {
 
 #work_list #work_header {
   overflow: auto;
-  font-size: 18px;
   margin-top: 15px;
 }
 
@@ -99,8 +114,13 @@ img {
   float: left;
 }
 
+#work_header form input {
+  margin-right: 5px;
+}
+
 #work_list #work_header a {
   padding-right: 25px;
+  font-size: 18px;
   font-weight: 800;
   padding-left: 25px;
 }
@@ -121,7 +141,7 @@ form input {
   float:left;
 }
 
-.edit_work_form input {
+#edit_work_form input {
   display: block;
   width: 100%;
   margin-bottom: 5px;

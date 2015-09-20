@@ -16,10 +16,11 @@
   - fix work_header CSS
   - click to see big pictures
   - refactor deletes to not return data
+  - get errors from database, display on screen
 - if you delete a work shown in the artist's sidebar, remove it (replace or empty)
-- get errors from database, display on screen
 - refactor html strings to jade partials
 - extract pg calls into one function
 - convert css to sass
 - make artist_header/body, work_header/body
 - test with mocha
+- refactor to MVC pattern

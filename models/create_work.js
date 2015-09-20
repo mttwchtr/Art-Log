@@ -3,5 +3,5 @@ var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/ar
 
 var client = new pg.Client(connectionString);
 client.connect();
-var query = client.query('CREATE TABLE work(id SERIAL PRIMARY KEY, artist_id integer REFERENCES artist (id), year VARCHAR(40), url VARCHAR(200), title VARCHAR(200))');
+var query = client.query("CREATE TABLE work(id SERIAL PRIMARY KEY, artist_id integer REFERENCES artist (id), year VARCHAR(40) DEFAULT 'Unknown', url VARCHAR(200) not null, title VARCHAR(200) DEFAULT 'Unknown')");
 query.on('end', function() { client.end(); });
