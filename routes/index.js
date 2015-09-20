@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
 						console.log(err);
 					} else {
 						client.end();
-						res.render('index', { title: 'Express', artists: result.rows});
+						res.render('index', { title: 'Art', artists: result.rows});
 					}
 				});
 		});
