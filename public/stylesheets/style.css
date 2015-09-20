@@ -2,6 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
   color: #333;
+  margin-top: 0;
 }
 
 body * {
@@ -72,7 +73,6 @@ body * {
 
 h2 {
   font-weight: 400;
-  margin-top: 15px;
   font-size: 2.5em;
 }
 
@@ -88,7 +88,6 @@ form button {
   display: inline-block;
   float: left;
   margin-left: 12vw;
-  margin-top: 10px;
   width: 80%;
 }
 
@@ -110,7 +109,6 @@ img {
 
 #work_list #work_header {
   overflow: auto;
-  margin-top: 15px;
 }
 
 #work_list #work_header a, #work_list #work_header form {
@@ -120,6 +118,18 @@ img {
 
 #work_header form input {
   margin-right: 5px;
+}
+
+#work_header {
+  position: fixed;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  background-color: white;
+  width: 100%;
+}
+
+#work_body {
+  margin-top: 50px;
 }
 
 #work_list #work_header a {

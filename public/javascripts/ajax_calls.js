@@ -244,7 +244,7 @@ $(document).ready(function(){
         var artist_years = $('#artist_' + id + ' .artist_years').text();
         var art_list = '<div id="work_header"><a href= #artist_'+ id +'>' +  artist_name + ' | ' + artist_years + '</a>';
         art_list += "<form id='new_work_form'><input type ='text' placeholder='year' id='work_year'><input type ='text' placeholder='title' id='work_title'><input type ='text' placeholder='url' id='work_url'><input type ='hidden' id='work_artist_id' value=" + id + "><button></button></form></div><br>";
-        art_list += data;
+        art_list += "<div id='work_body'>" + data + "</div>";
         $('#work_list').html(art_list);
         if($('#work_view_type').text() === 'Works +'){
           $('#work_list img').siblings().toggle();

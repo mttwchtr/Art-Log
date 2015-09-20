@@ -3,4 +3,4 @@
 - convert css to sass
 - abstract pg connections to a single function
 - test with mocha
-- refactor to MVC pattern
+- refactor app to MVC pattern
