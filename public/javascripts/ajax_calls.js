@@ -196,6 +196,9 @@ $(document).ready(function(){
     success: function(data) {
       $('#artist_' + id).empty();
       $('#artist_' + id).append('<p class="artist_name">' + data[0].name + '</p><p class="artist_years">' + data[0].years + '</p>' + new_image + '<br><span class="edit_artist">Edit</span><span class="remove_artist">Delete</span>');
+      if(id == $('#work_list input[type=hidden]').val()){
+        $('#work_header a').text(data[0].name + ' | ' + data[0].years);
+      }
     }
   });
  });
