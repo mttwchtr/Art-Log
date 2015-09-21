@@ -38,7 +38,7 @@ $(document).ready(function(){
       $('#work_header').hide();
       $('#work_list .work:not(#work_' + id + ')').hide();
       $('#work_' + id).children().not('img').hide();
-      $(this).css('height', '90vh');
+      $(this).css('height', '80vh');
     } else {
       $('#work_header').show();
       $(this).removeClass('big');
